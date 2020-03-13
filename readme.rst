@@ -5,6 +5,11 @@ Steps to reproduce::
     # Open it with kde-open5.
     $ make open-kde
 
+Expected result: ``kde-open5`` opens ``example.fcyzqrpw`` in ``xedit``.
+
+Actual result: ``kde-open5`` shows a "Choose Application - KIO Client" window
+and can't save any persistent default application.
+
 Manual steps to reproduce::
 
     xdg-mime install --mode user x-fcyzqrpw.xml
