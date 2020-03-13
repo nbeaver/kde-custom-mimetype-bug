@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=FCYZQRPW handler
+Comment=Handles FCYZQRPW files
+TryExec=xedit
+Exec=xedit %F
+MimeType=application/x-fcyzqrpw
