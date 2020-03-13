@@ -14,3 +14,7 @@ Manual steps to reproduce::
     update-desktop-database ~/.local/share/applications
     update-mime-database ~/.local/share/mime
     kde-open5 example.fcyzqrpw
+
+Required packages (on Kubuntu 18.04)::
+
+    sudo apt install make desktop-file-utils
