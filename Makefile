@@ -15,6 +15,10 @@ open-kde :
 open-gio :
 	gio open $(FCYZQRPW)
 
+.PHONY: open-xfce
+open-xfce :
+	exo-open $(FCYZQRPW)
+
 .PHONY: get-mimetype
 get-mimetype :
 	-xdg-mime query filetype $(FCYZQRPW)
