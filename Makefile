@@ -2,6 +2,7 @@ MIMETYPE:=application/x-fcyzqrpw
 MIMEINFO:=x-fcyzqrpw.xml
 DESKTOP:=fcyzqrpw.desktop
 FCYZQRPW:=example.fcyzqrpw
+ARCHIVE:=kde-custom-mimetype-bug.zip
 
 .PHONY: open
 open :
@@ -30,6 +31,9 @@ check-handler:
 	-xdg-mime query default $(MIMETYPE)
 	-gio mime $(MIMETYPE)
 
+$(ARCHIVE) : Makefile $(MIMEINFO) $(DESKTOP) $(FCYZQRPW) .gitignore readme.rst symlink.sh undo-symlink.sh
+	zip $@ $^
+
 .PHONY: install
 install :
 	xdg-mime install --mode user $(MIMEINFO)
@@ -45,3 +49,4 @@ uninstall :
 	rm -f $(HOME)/.local/share/applications/$(DESKTOP)
 	xdg-mime uninstall --mode user $(MIMEINFO)
 	bash undo-symlink.sh
+
