@@ -18,6 +18,8 @@ Manual steps to reproduce::
     xdg-mime default fcyzqrpw.desktop application/x-fcyzqrpw
     update-desktop-database ~/.local/share/applications
     update-mime-database ~/.local/share/mime
+    mv ~/.local/share/mime/application ~/.local/share/mime/application.real
+    ln -s -r ~/.local/share/mime/application.real ~/.local/share/mime/application
     kde-open5 example.fcyzqrpw
 
 Required packages (on Kubuntu 18.04)::
