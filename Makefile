@@ -38,3 +38,10 @@ install :
 	xdg-mime default $(DESKTOP) $(MIMETYPE)
 	update-desktop-database ~/.local/share/applications
 	update-mime-database ~/.local/share/mime
+	bash symlink.sh
+
+.PHONY: uninstall
+uninstall :
+	rm -f $(HOME)/.local/share/applications/$(DESKTOP)
+	xdg-mime uninstall --mode user $(MIMEINFO)
+	bash undo-symlink.sh
